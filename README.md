@@ -48,3 +48,27 @@
 		}
 		//当然，这种置换也是很灵活的，就像上面的冒泡排序所用的跟着个就略有不同
 ```
+
+###3.返回最大差值 
+```
+		function getb(arr) {
+			var a = arr[0];
+			var b = 0;
+			for (var i = 0; i < arr.length; i++) {
+				var c = arr[i];
+				a = Math.min(a, c);
+				var d = c - a;
+				b = Math.max(b, d);
+			}
+			return b;
+		}
+		var arr = [ 5 , 6 , 3 , 8 , 2 , 9 ];
+		console.log(getb(arr));
+
+		var maxNum = function(arr){
+			arr.sort((a,b)=>a-b);
+			return arr[arr.length-1]-arr[0];
+		}
+		console.log(maxNum(arr));
+```
+
